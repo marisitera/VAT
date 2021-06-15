@@ -30,44 +30,44 @@ Iga käibemaksupõhise postitusgrupi kombinatsiooni jaoks saate määratleda, ka
 
 Deklareeritavate ja mitte deklareeritavate tehingute automaatseks eraldamiseks tuleb tehingud postitada erinevate käibemaksukohustuslaste gruppidega. Tehingud, mida tuleb kirjeldada eranditena, tuleb postitada ka eraldi käibemaksukohustuslaste gruppidega.
 
-Examples:
-1. Transactions with companies have to be declared and transactions with private persons do not have to be declared.  Therefore, the customers and vendors who are private persons, should be posted with separate **VAT Business Posting Group** (e.g. *PRIVATE*)
-2. When invoice(s) is/are issued for professional services which are treated as confidential by the laws, those transactions do not have to be declared and the sale of those services should be posted with separate **VAT Product Posting Group**.
+Näited:
+1. Tehingud ettevõtetega tuleb deklareerida ja tehinguid eraisikutega ei pea deklareerima. Seetõttu peaksid eraisikutest kliendid ja müüjad olema loodud eraldi **KM äri konteeringurühm** väärtusega (näiteks *MITTE KM KOHUSLANE*).
+2.Kui arve(d) esitatakse ametialaste teenuste eest, mida seaduse ees käsitletakse kui konfidentsiaalseid, siis neid tehinguid ei pea deklareerima ja nende teenuste müük tuleks konteerimise peaks olema eraldi **KM toote konteeringurühm*.
 
-Place a check mark to the **KMD No Declarating on INF** to those **VAT Posting Setup** lines, of which transactions do not have to be declared. You do not have to place a check mark to the **VAT Posting Setup** lines where **VAT %** is zero – those transactions will be excluded automatically.
+Märkige linnuke **KMD INF-il ei deklareerida** nendele ridadele **KM konteerimise seadistuses**, mille tehinguid ei pea deklareerima. Ridadele, kus **KM %** on null, ei pea te **KM konteerimise seadistuses** linnukest panema - need tehingud välistatakse automaatselt.
 
-Edit the **KM konteerimise seadistus** lines where you want to set up specialities. Select the speciality code to the field **KMD Speciality on Sale** or **KMD Speciality on Purchase**. Specialty '03' does not have to be and cannot be set up – this specialty will be added automatically if sales invoice has lines with VAT and also lines without VAT.
+Muutke **KM konteerimise seadistuses** neid ridasid millele te tahate seada erisusi. Valige erisuse kood väljal **KMD erisus müügil** või **KMD erisus ostul**. Erisust '03' ei pea, ega saagi lisada - see erisus lisatakse automaatselt kui müügiarvel on ridu nii käibemaksuga kui ilma.
 
-## How to create VAT Report
-Open **VAT Reports** (or **VAT Returns**), create a new report, assign **No.** and choose 'EST' for **Version**.
+## Kuidas luua käibemaksuaruannet
+Avage **KM tagastused(KMD)**, looge uus aruanne, määrake **Nr.** ja valige **Versioon** 'EST'.
 
-### Getting the data
-To get the data to the report, run the action **Suggest Lines** and choose the VAT statement to use and a period.
+### Andmete saamine
+Andmete saamiseks aruandesse käivitage toiming **Soovita ridu**, valige kasutatav KM aruanne ja periood.
 
-The function fills the VAT declaration data on the report lines (if you have set up the relations described in previous sections) and VAT declaration appendixes under the fields **INF-A Lines** and **INF-B Lines**.
+Funktsioon täidab KM deklaratsiooni aruande ridadel andmed (kui olete seadistanud eelmistes jaotistes kirjeldatud seosed) ja INF lisad all väljad **INF-A read** ja **INF-B read**.
 
-To review the **INF-A Lines** and **INF-B Lines**, drilldown on these fields.
+**INF-A read** ja **INF-B read** ülevaatamiseks, klõpsake rea väärtusel.
 
-If needed, you can manually add data. When you want to see the details of some sales or purchase transaction on the appendixes, you can use **Navigate** function.
+Vajadusel saate manuaalselt lisada andmeid. Kui tahate näha mõne müügi või ostu kande detaile lisades, võite kasutada funktsiooni **Navigeeri**.
 
-### Checking and completing of Registration numbers
-Transaction partner name is used on the declaration if transaction partner registration number is missing. However, to prevent possible identification problems (name in BC is slightly different from the name in Tax Office database) it is recommended to fill in registration numbers in BC (on customer/vendor card). To review the list of the transaction partners with missing registration numbers, click on the appendixes **Customers without Reg. No.** or **Vendors without Reg. No.**
+### Registreerimisnumbrite kontrollimine ja täitmine
+Tehingupartneri nime kasutatakse deklaratsiooni kui tehingupartneri registreerimisnumber puudub. Võimalike tuvastamisprobleemide vältimiseks (nimi BC-s erineb veidi maksuameti andmebaasis olevast nimest) on soovitatav täita registreerimisnumbrid BC-s (kliendi/hankija kaardil).Puuduvate registreerimisnumbritega tehingupartnerite loendi vaatamiseks klõpsake lisadel **Reg.numbrita kliendid** või **Reg.numbrita hankijad**.
 
-In order to automatically complete the missing registration numbers, you can use the function **Update Data from Business Register** in both lists. After running the update, the lists will contain those transaction partners who were not found in Business Register. Edit those customers/vendors one by one, by running function **Query from Business Register** and specifying the company name to search.
+Puuduvate registreerimisnumbrite automaatseks täitmiseks võite mõlema lisaga kasutada funktsiooni**Uuenda andmed äriregistrist**. Pärast uuenduse jooksutamist, sisaldab nimekiri neid tehinguparntereid keda ei leitud äriregistrist. Muutke neid kliente/hankijaid ükshaaval kasutades funktsiooni **Päri äriregistrist** ja määrates otsitava ettevõtte nime.
 
-## Creating the XML file for submitting the declaration
+## Deklaratsiooni esitamiseks XML-faili loomine
+Märkige linnuke **Teata kõigist tehingutest**, kui soovite lisada nende tehingupartnerite arveid, kelle tehingute kogusumma jääb alla limiidi (1000 €).
 
-Place the check mark **Report All Transactions** if you wish to include the invoices of those transaction partners, whose transactions total amount is below the limit (1000€).
-
-Click **Generate** to save the report into XML file. Upload and submit the file in E-Tax Board.
+Aruande XML-faili salvestamiseks klõpsake **Loo**. Laadige fail üles ja esitage E-maksuametis.
 
 ---
-## Requirements for postings in Business Central:
-1. Posted VAT Entries are required, because VAT report appendix data is based on VAT Entries. The requirement 1 is supported by following the requirements 2 and 3.
-2. Transactions must be posted, using customer and vendor cards. The data of customer and vendor cards has to match the actual company information of those transaction partners.
-3. Transactions must be posted as invoice or credit memo, or from the General Journal, when document type is defined as Invoice or Credit Memo.
-4. The transaction partners to be declared / not to be declared must be set up with different VAT Business Posting Groups. That allows you to define the combinations of VAT posting groups in VAT Posting Setup, which have to be excluded from the declared data.
+## Business Centrali konteeringute nõuded:
+1. Konteeritud KM kanded on kohustuslikud kuna KM aruande lisade andmed põhinevad KM kannetel. Nõuet 1 toetab nõuete 2 ja 3 järgimine.
+2. Tehingud tuleb konteerida kliendi ja müüja kaarte kasutades. Kliendikaartide ja hankijakaartide andmed peavad vastama nende tehingupartnerite tegelikule ettevõtteteabele.
+3.Tehingud tuleb konteerida arve või kreeditarvena või peažurnaali kandena, kui dokumendi tüübiks on määratud arve või kreeditarve.
+4. Deklareeritavad / deklareerimata tehingupartnerid tuleb luua koos erinevate käibemaksuga ettevõtluse postitusgruppidega. See võimaldab teil käibemaksu konteerimise seadistuses määratleda käibemaksu kirjendamise rühmade kombinatsioonid, mis tuleb deklareeritud andmetest välja jätta.
 5. The items/services to be declared / not to be declared must be set up with different VAT Product Posting Groups. That allows you to define the combinations of VAT posting groups in VAT Posting Setup, which have to be excluded from the declared data.
-6. The expense documents submitted by authorized employees should be posted as purchase invoices.
-7. In order to declare prepayments, you must post and issue prepayment invoice(s), because the appendix of VAT Declaration is based on invoicing information and not payments information.
-8. In order to include prepayment invoice in declaration only when it has been paid, you have to use BC functionality Prepayment Unrealized VAT.
+6. Deklareeritavad / deklareerimata kaubad / teenused tuleb seadistada koos erinevate KM toote konteerigurühmadeg. See võimaldab teil KM konteerimise seadistuses määratleda käibemaksu kirjendamise rühmade kombinatsioonid, mis tuleb deklareeritud andmetest välja jätta.
+7. Volitatud töötajate esitatud kuludokumendid tuleks üles panna ostuarvetena.
+8. Ettemaksude deklareerimiseks peate konteerima ja väljastama ettemaksuarve(d), kuna käibedeklaratsiooni lisa põhineb arvete andmetel, mitte maksetel.
+9. Et lisada ettemaksuarve deklaratsiooni alles pärast selle tasumist, peate kasutama BC funktsiooni Ettemakse realiseerimata käibemaks.
