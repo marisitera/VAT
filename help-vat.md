@@ -19,9 +19,9 @@ Nende väljade eeltäitmiseks uutel deklaratsioonidel avage **KM aruande seadist
 ## Kuidas koguda andmeid käibemaksuaruande lisa jaoks
 Avage **KM aruande seadistus** ja vahekaardil **Eesti KM aruanne** seadistage järgmised väljad:
 * Esitatav tehingupartner - valige, milliseid osapooli deklaratsioonis kasutatakse:
-    * * Makse saaja hankija/Maksja klient*
-    * * Müüja hankija/Ostja klient *
-    * * Müüja hankija/Ostja klient (ainult KM reg. nr. olemasolul) * - selle valikuga kasutatakse Müüja hankija/Ostja klient juhul kui neil on **KM reg. nr.**, vastasel juhul kasutatakse Makse saaja hankija/Maksja klienti.
+    * *Makse saaja hankija/Maksja klient*
+    * *Müüja hankija/Ostja klient*
+    * *Müüja hankija/Ostja klient (ainult KM reg. nr. olemasolul)* - selle valikuga kasutatakse Müüja hankija/Ostja klient juhul kui neil on **KM reg. nr.**, vastasel juhul kasutatakse Makse saaja hankijat/Maksja klienti.
 * Piirmäära summa - sisestage 1000.   
  
 Andmed KM aruande lisa jaoks kogutakse **KM kanded** loendist. Õigete andmete kogumiseks vajalike tingimuste seadistamiseks avage **KM konteerimise seadistus**.
@@ -66,8 +66,7 @@ Aruande XML-faili salvestamiseks klõpsake **Loo**. Laadige fail üles ja esitag
 2. Tehingud tuleb konteerida kliendi ja müüja kaarte kasutades. Kliendikaartide ja hankijakaartide andmed peavad vastama nende tehingupartnerite tegelikule ettevõtteteabele.
 3.Tehingud tuleb konteerida arve või kreeditarvena või peažurnaali kandena, kui dokumendi tüübiks on määratud arve või kreeditarve.
 4. Deklareeritavad / deklareerimata tehingupartnerid tuleb luua koos erinevate käibemaksuga ettevõtluse postitusgruppidega. See võimaldab teil käibemaksu konteerimise seadistuses määratleda käibemaksu kirjendamise rühmade kombinatsioonid, mis tuleb deklareeritud andmetest välja jätta.
-5. The items/services to be declared / not to be declared must be set up with different VAT Product Posting Groups. That allows you to define the combinations of VAT posting groups in VAT Posting Setup, which have to be excluded from the declared data.
-6. Deklareeritavad / deklareerimata kaubad / teenused tuleb seadistada koos erinevate KM toote konteerigurühmadeg. See võimaldab teil KM konteerimise seadistuses määratleda käibemaksu kirjendamise rühmade kombinatsioonid, mis tuleb deklareeritud andmetest välja jätta.
-7. Volitatud töötajate esitatud kuludokumendid tuleks üles panna ostuarvetena.
-8. Ettemaksude deklareerimiseks peate konteerima ja väljastama ettemaksuarve(d), kuna käibedeklaratsiooni lisa põhineb arvete andmetel, mitte maksetel.
-9. Et lisada ettemaksuarve deklaratsiooni alles pärast selle tasumist, peate kasutama BC funktsiooni Ettemakse realiseerimata käibemaks.
+5. Deklareeritavad / deklareerimata kaubad / teenused tuleb seadistada koos erinevate KM toote konteerigurühmadeg. See võimaldab teil KM konteerimise seadistuses määratleda käibemaksu kirjendamise rühmade kombinatsioonid, mis tuleb deklareeritud andmetest välja jätta.
+6. Volitatud töötajate esitatud kuludokumendid tuleks üles panna ostuarvetena.
+7. Ettemaksude deklareerimiseks peate konteerima ja väljastama ettemaksuarve(d), kuna käibedeklaratsiooni lisa põhineb arvete andmetel, mitte maksetel.
+8. Et lisada ettemaksuarve deklaratsiooni alles pärast selle tasumist, peate kasutama BC funktsiooni Ettemakse realiseerimata käibemaks.
